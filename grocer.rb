@@ -38,6 +38,7 @@ new_cart
 end
 
 def apply_coupons(cart, coupons)
+  counter=0 
   
   
 end
