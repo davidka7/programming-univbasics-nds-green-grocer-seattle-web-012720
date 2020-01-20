@@ -50,13 +50,10 @@ cart.each do |product_name, stats|
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+ hash_cart = consolidate_cart(cart)
+  applied_coupons = apply_coupons(hash_cart, coupons)
+  applied_discount = apply_clearance(applied_coupons)
+  total = applied_discount.reduce(0) { |acc, (key, value)| acc += (value[:count] * value[:price])}
+  total > 100 ? total * 0.9 : total 
+
 end
