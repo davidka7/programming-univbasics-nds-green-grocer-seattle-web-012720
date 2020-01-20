@@ -16,22 +16,19 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-   final_hash = {}
-  cart.each do |element_hash|
-    element_name = element_hash.keys[0]
-    element_stats = element_hash.values[0]
-
-    if final_hash.has_key?(element_name)
-      final_hash[element_name][:count] += 1
-  else
-  final_hash[element_name] = {
-    count: 1,
-    price: element_stats[:price],
-    clearance: element_stats[:clearance]
-  } 
+  new_hash = {}
+  cart.each do |item|
+    if new_hash[item.keys[0]]
+      new_hash[item.keys[0]][:count] += 1
+    else
+      new_hash[item.keys[0]] = {
+        count: 1,
+        price: item.values[0][:price],
+        clearance: item.values[0][:clearance]
+      }
+    end
   end
- end
-  final_hash
+  new_hash
 end
 
 def apply_coupons(cart, coupons)
