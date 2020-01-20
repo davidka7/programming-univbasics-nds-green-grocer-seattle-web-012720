@@ -86,6 +86,6 @@ def checkout(items, coupons)
   counter+=1 
 end
 if total > 0 
-  total -= 
+  total -= (total)
 end
 
