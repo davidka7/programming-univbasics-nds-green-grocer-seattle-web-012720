@@ -60,7 +60,7 @@ end
 end
 counter+=1 
 end
-  
+  cart
 end
 
 def checkout(items, coupons)
