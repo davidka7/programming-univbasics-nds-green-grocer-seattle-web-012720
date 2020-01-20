@@ -82,7 +82,7 @@ def checkout(items, coupons)
   total = 0
   counter=0
   while counter < final_cart.length 
-  total 
+  total += final_cart
   counter+=1 
   
 end
