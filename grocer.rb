@@ -76,7 +76,7 @@ end
 
 def checkout(items, coupons)
    consolidate_cart = consolidate_cart(cart)
-  couponed_cart = apply_coupons(consolidated_cart)
+  couponed_cart = apply_coupons(consolidated_cart, coupons)
   final_cart = apply_clearance(couponed_cart)
   
   total = 0
@@ -88,6 +88,6 @@ end
 if total > 0 
   total -= (total- 0.10)
 end
-
+total
 end
 
