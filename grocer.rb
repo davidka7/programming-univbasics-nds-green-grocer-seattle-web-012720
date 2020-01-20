@@ -52,7 +52,7 @@ def apply_coupons(cart, coupons)
   :item => couponed_item_name,
   :price => coupons[counter][:cost]/coupons[counter][:num],
   :count => cart[counter][:num],
-  :clearance => cart_item
+  :clearance => cart_item[]
    }
   
 end
