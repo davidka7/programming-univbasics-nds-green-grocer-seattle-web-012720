@@ -6,7 +6,7 @@ end
 
 def consolidate_cart(cart)
   
-end
+
   final_hash = {}
   cart.each do|element_hash| 
     element_name = element_hash.keys[0]
