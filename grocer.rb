@@ -39,7 +39,8 @@ end
 
 def apply_coupons(cart, coupons)
   counter=0 
-  while <
+  while < coupons.length 
+  
   
 end
 
