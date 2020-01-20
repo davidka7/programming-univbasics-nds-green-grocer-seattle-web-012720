@@ -5,23 +5,24 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  consol_cart = Hash.new
-  cart.each do |item|
-    if consol_cart[item.keys[0]] #Item with that key is already in consol cart
-      consol_cart[item.keys[0]][:count] += 1
-
-    else 
-      item_name = item.keys[0]
-      new_consol_cart_item = {}
-      new_consol_cart_item[:price] = item[item_name][:price]
-      new_consol_cart_item[:clearance] = item[item_name][:clearance]
-      new_consol_cart_item[:count] = 1
-      consol_cart[item_name] = new_consol_cart_item
-
-  end 
-  end 
-  consol_cart
+  # code here
 end
+  final_hash = {}
+  cart.each do|element_hash| 
+    element_name = element_hash.keys[0]
+
+    if final_hash.has_key?(element_name)
+      final_hash[element_name][:count] += 1 
+    else 
+      final_hash[element_name] = {
+       count: 1, 
+       price: element_hash[element_name][:price],
+       clearance: element_hash[element_name][:clearance]
+      }
+    end 
+  end 
+  final_hash
+end 
 
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
