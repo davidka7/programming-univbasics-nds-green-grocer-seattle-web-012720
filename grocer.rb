@@ -89,3 +89,5 @@ if total > 0
   total -= (total- 0.10)
 end
 
+end
+
