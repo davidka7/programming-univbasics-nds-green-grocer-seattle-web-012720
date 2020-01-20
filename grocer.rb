@@ -85,6 +85,7 @@ def checkout(items, coupons)
   total += final_cart[:counter][price]* final_cart[counter][:count]
   counter+=1 
 end
-if 
+if total > 0 
+  
 end
 
